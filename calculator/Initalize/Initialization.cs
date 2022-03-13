@@ -6,24 +6,17 @@ namespace Calculator.Initialize {
         public static void initialNumber(){
         //To replaced calcedNumber with an initial number.
             Console.WriteLine("Enter a number");
-            string newNumber = Console.ReadLine(); 
+            string? newNumber = Console.ReadLine(); 
             if(!Calculator.Math.Calculations.CheckValidNumber(newNumber)){
                 initialNumber();
             }else{
                 calcedNumber =  Convert.ToInt32(newNumber);
             }
         }
-        public static void Menu(){
-            //Asks the user for what kind of calculations they want to do.
-            Console.WriteLine("Enter the following letter on the list for the corresponding option"+ 
-            "\n~ c : Clear the calculator\n~ a : Addition\n~ s : Subtraction\n~ m : Multiplication"
-            + "\n~ d : Division\n~ x : Exit the calculator");
-            inputOptions();
-        }
+        //Input options called through Menu
         public static void inputOptions(){
-            string input = Console.ReadLine();
-                    switch (input)
-            {
+            string? input = Console.ReadLine();
+                    switch (input){
                 case "a":
                     calcedNumber = Calculator.Math.Calculations.Addition(calcedNumber);
                     hasCalculated = true;
@@ -55,6 +48,13 @@ namespace Calculator.Initialize {
         }
         public static bool Exit(){
             return exit;
+        }
+        public static void Menu(){
+            //Asks the user for what kind of calculations they want to do.
+            Console.WriteLine("Enter the following letter on the list for the corresponding option"+ 
+            "\n~ c : Clear the calculator\n~ a : Addition\n~ s : Subtraction\n~ m : Multiplication"
+            + "\n~ d : Division\n~ x : Exit the calculator");
+            inputOptions();
         }
     }
 }
