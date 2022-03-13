@@ -7,7 +7,7 @@ namespace Calculator.Math {
         public static bool CheckValidNumber(string input){
             try
             {
-                Convert.ToInt32(input);
+                Convert.ToDouble(input);
                 return true;
             }
             catch (FormatException)
@@ -15,45 +15,49 @@ namespace Calculator.Math {
                 Console.WriteLine("Not a valid number");
                 return false;
             }
-        }
-        public static int Addition(int currNumber){
+            catch(OverflowException){
+                Console.WriteLine("Not a valid number");
+                return false;
+            }
+        }   
+        public static double Addition(double currNumber){
             Console.WriteLine("Enter a number to add:");
             string input = Console.ReadLine();
             if(!CheckValidNumber(input)){
                 return Addition(currNumber);
             }else{
-                int number = Convert.ToInt32(input);
+                double number = Convert.ToDouble(input);
                 return currNumber += number;
             }
         }
-        public static int Subtraction (int currNumber){
+        public static double Subtraction (double currNumber){
             Console.WriteLine("Enter a number to subtract:");
             string input = Console.ReadLine();
             if(!CheckValidNumber(input)){
                 return Subtraction(currNumber);
             }else{
-                int number = Convert.ToInt32(input);
-                return currNumber += number;
+                double number = Convert.ToDouble(input);
+                return currNumber -= number;
             }
         }
-        public static int Multiplication (int currNumber){
+        public static double Multiplication (double currNumber){
             Console.WriteLine("Enter a number to multiply by:");
             string input = Console.ReadLine();
             if(!CheckValidNumber(input)){
                 return Multiplication(currNumber);
             }else{
-                int number = Convert.ToInt32(input);
-                return currNumber += number;
+                double number = Convert.ToDouble(input);
+                return currNumber *= number;
             }
         }
-        public static int Division (int currNumber){
+        public static double Division (double currNumber){
             Console.WriteLine("Enter a number to divide by:");
             string input = Console.ReadLine();
             if(!CheckValidNumber(input)){
                 return Division(currNumber);
             }else{
-                int number = Convert.ToInt32(input);
-                return currNumber += number;
+                double number = Convert.ToDouble(input);
+                return currNumber /= number;
             }
         }
     }
