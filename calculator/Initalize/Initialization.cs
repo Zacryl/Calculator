@@ -15,9 +15,9 @@ namespace Calculator.Initialize {
         }
         public static void Menu(){
             //Asks the user for what kind of calculations they want to do.
-            Console.WriteLine("Enter the following letter for the corresponding option"+ 
-            "\n-c: Clear the calculator\n-a: Addition\n-s: Subtraction\n-m: Multiplication"+
-            "\n-d: Division\n-x: Exit the calculator");
+            Console.WriteLine("Enter the following letter on the list for the corresponding option"+ 
+            "\n~ c : Clear the calculator\n~ a : Addition\n~ s : Subtraction\n~ m : Multiplication"
+            + "\n~ d : Division\n~ x : Exit the calculator");
             inputOptions();
         }
         public static void inputOptions(){
