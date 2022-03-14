@@ -10,7 +10,7 @@ namespace Calculator.Initialize {
             if(!Calculator.Math.Calculations.CheckValidNumber(newNumber)){
                 initialNumber();
             }else{
-                calcedNumber =  Convert.ToInt32(newNumber);
+                calcedNumber =  Convert.ToDouble(newNumber);
             }
         }
         //Input options called through Menu
