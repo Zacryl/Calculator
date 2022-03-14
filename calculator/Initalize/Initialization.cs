@@ -50,6 +50,7 @@ namespace Calculator.Initialize {
             return exit;
         }
         public static void Menu(){
+            Calculator.Math.Calculations.history();
             //Asks the user for what kind of calculations they want to do.
             Console.WriteLine("Enter the following letter on the list for the corresponding option"+ 
             "\n~ c : Clear the calculator\n~ a : Addition\n~ s : Subtraction\n~ m : Multiplication"

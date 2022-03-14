@@ -3,7 +3,16 @@ using System.Collections.Generic;
 
 namespace Calculator.Math {
     public class Calculations{
-
+        
+        private static List<string> historyList = new List<string>();
+        public static string history(){
+            string sum = "Calculation history: "; 
+            for (int i = 0; i < historyList.Count; i++)
+            {
+                sum += historyList[i] + ", ";
+            }
+            return(sum);
+        }
         public static bool CheckValidNumber(string? input){
             try{
                 Convert.ToDouble(input);
@@ -25,7 +34,10 @@ namespace Calculator.Math {
                 return Addition(currNumber);
             }else{
                 double number = Convert.ToDouble(input);
-                return currNumber += number;
+                var tempCurr = currNumber;
+                currNumber += number;
+                historyList.Add(string.Format("{0} + {1} = {2}",tempCurr,number,currNumber));
+                return currNumber;
             }
         }
         public static double Subtraction (double currNumber){
@@ -35,7 +47,10 @@ namespace Calculator.Math {
                 return Subtraction(currNumber);
             }else{
                 double number = Convert.ToDouble(input);
-                return currNumber -= number;
+                var tempCurr = currNumber;
+                currNumber -= number;
+                historyList.Add(string.Format("{0} - {1} = {2}",tempCurr,number,currNumber));
+                return currNumber;
             }
         }
         public static double Multiplication (double currNumber){
@@ -45,7 +60,10 @@ namespace Calculator.Math {
                 return Multiplication(currNumber);
             }else{
                 double number = Convert.ToDouble(input);
-                return currNumber *= number;
+                var tempCurr = currNumber;
+                currNumber *= number;
+                historyList.Add(string.Format("{0} x {1} = {2}",tempCurr,number,currNumber));
+                return currNumber;
             }
         }
         public static double Division (double currNumber){
@@ -55,7 +73,10 @@ namespace Calculator.Math {
                 return Division(currNumber);
             }else{
                 double number = Convert.ToDouble(input);
-                return currNumber /= number;
+                var tempCurr = currNumber;
+                currNumber /= number;
+                historyList.Add(string.Format("{0} / {1} = {2}",tempCurr,number,currNumber));
+                return currNumber;
             }
         }
     }
