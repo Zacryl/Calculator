@@ -12,7 +12,7 @@ namespace Calculator.MainMenu{
                 if(Calculator.Initialize.Initializer.hasCalculated){
                     Console.Clear();
                     Console.WriteLine("Current calculation: {0}\n", Calculator.Initialize.Initializer.calcedNumber); 
-                    Console.WriteLine(Calculator.Math.Calculations.history());
+                    Console.WriteLine(Calculator.Math.Calculations.disHistory());
                     Calculator.Initialize.Initializer.Menu();
                 }else{
                     Console.Clear(); 

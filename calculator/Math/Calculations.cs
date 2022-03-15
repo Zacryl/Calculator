@@ -4,19 +4,20 @@ using System.Collections.Generic;
 namespace Calculator.Math {
     public class Calculations{
         
-        private static List<string> historyList = new List<string>();
-        public static string history(){
+        private static List<string> displayHisList = new List<string>();
+        private static List<double> historyList = new List<double>();
+        public static string disHistory(){
             string sum = "Calculation history: "; 
-            for (int i = 0; i < historyList.Count; i++)
+            for (int i = 0; i < displayHisList.Count; i++)
             {
-                sum += historyList[i] + ", ";
+                sum += displayHisList[i] + ", ";
             }
             return(sum);
-        }
+        }    
         public static bool CheckValidNumber(string? input){
             try{
                 Convert.ToDouble(input);
-                return true;
+                return true;  
             }
             catch (FormatException){
                 Console.WriteLine("Not a valid number");
@@ -36,7 +37,7 @@ namespace Calculator.Math {
                 double number = Convert.ToDouble(input);
                 var tempCurr = currNumber;
                 currNumber += number;
-                historyList.Add(string.Format("{0} + {1} = {2}",tempCurr,number,currNumber));
+                displayHisList.Add(string.Format("{0} + {1} = {2}",tempCurr,number,currNumber));
                 return currNumber;
             }
         }
@@ -49,7 +50,7 @@ namespace Calculator.Math {
                 double number = Convert.ToDouble(input);
                 var tempCurr = currNumber;
                 currNumber -= number;
-                historyList.Add(string.Format("{0} - {1} = {2}",tempCurr,number,currNumber));
+                displayHisList.Add(string.Format("{0} - {1} = {2}",tempCurr,number,currNumber));
                 return currNumber;
             }
         }
@@ -62,7 +63,7 @@ namespace Calculator.Math {
                 double number = Convert.ToDouble(input);
                 var tempCurr = currNumber;
                 currNumber *= number;
-                historyList.Add(string.Format("{0} x {1} = {2}",tempCurr,number,currNumber));
+                displayHisList.Add(string.Format("{0} x {1} = {2}",tempCurr,number,currNumber));
                 return currNumber;
             }
         }
@@ -75,7 +76,7 @@ namespace Calculator.Math {
                 double number = Convert.ToDouble(input);
                 var tempCurr = currNumber;
                 currNumber /= number;
-                historyList.Add(string.Format("{0} / {1} = {2}",tempCurr,number,currNumber));
+                displayHisList.Add(string.Format("{0} / {1} = {2}",tempCurr,number,currNumber));
                 return currNumber;
             }
         }
