@@ -5,6 +5,8 @@ Methods and variables are static instead of instatances since I developed it aro
 that needs to be instantiated for different reason. And also it was a short time project.
 Goal with this project is to later develop it into a GUI driven calculator.
 
+I made this calculator with no research and purely based of my own thoughts.
+
 For now it has a few features like
 Adding two numbers together.
 Dividing two numbers.
